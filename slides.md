@@ -370,6 +370,15 @@ Surple have 3 data services currently in production
 
 ---
 
+## Practical notes
+
+- tweaking cpu load has made more a difference than tweaking timeout
+- taking the time to set up SAM correctly has saved at least the time of browser console work alone
+- A Cloud Guru is built on lambda (exclusively?)
+  - And has some great material on it
+
+---
+
 ## When is lambda?
 #### (the right choice)
 
@@ -379,15 +388,31 @@ Good case
 - per 'reasonable' data set
   - `for each`
 - 'now in a minute'
-  - can be interactive trigger or pre-calculated
-  - (not actually a minute, more like seconds)
+ - (not actually a minute, more like seconds)
+- 'bursty'
+  - some, or lots of people need it then no one does
+
+---~
+
+## When is lambda?
+#### (the right choice)
 
 Bad case
 - 'fancy' models
   - RAM limits, CPU limits
 - whole scale
-  - `include all`
-- 
+  - `across all`
+- immediate response
+  - can't afford a cold start
+- 24:7 flat load
+  - need 100% load 100% of the time
+
+---~
+
+## Thank you
+
+Slides available: [https://github.com/DaveParr/snakes_and_lambdas](https://github.com/DaveParr/snakes_and_lambdas)
+Twitter: [@DaveParr](https://twitter.com/DaveParr)
 
 ---
 

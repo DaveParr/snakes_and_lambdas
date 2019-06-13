@@ -29,7 +29,7 @@
    1. Accept event 2 and process - "warmed up"
    2. Timeout and kill lambda
 
-there can be multiple machines to 
+There can be multiple _concurrent_ machines too
 
 ---~
 
@@ -47,7 +47,7 @@ there can be multiple machines to
 - data-scientists != dev-ops professionals
     - but our work needs to be 'released'
 - all data projects != ensemble xg-boost Keras TPU shenanigans
-    - "No ML is easier to manage than no ML" [@julsimon](https://twitter.com/julsimon/status/1124383078313537536)
+    - "No ML is easier to manage than no ML" &copy; [@julsimon](https://twitter.com/julsimon/status/1124383078313537536)
 - data-projects != single-goal monolithic systems
     - separate concerns, code bases and complication
 
@@ -332,7 +332,9 @@ Get help from an adult (dev-ops professional)
 
 ## 4. Profit
 
-Surple have 3 data services currently in production
+![surple](media/Surple_Logo_Negative_Colour.png)
+
+Surple have 3 lambda data services
 
 ---~
 
@@ -374,10 +376,10 @@ Surple have 3 data services currently in production
 
 - tweaking cpu load has made more a difference than tweaking timeout
 - taking the time to set up SAM correctly has saved at least the time of browser console work alone
-- A Cloud Guru is built on lambda (exclusively?)
-  - And has some great material on it
+- A Cloud Guru is built on lambda ([cheaply?](https://aws.amazon.com/lambda/pricing/))
+  - And has some [great material on it](https://acloud.guru/learn/aws-lambda)
 
----
+---~
 
 ## When is lambda?
 #### (the right choice)

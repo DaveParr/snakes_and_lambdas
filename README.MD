@@ -15,3 +15,7 @@ A presentation on using aws lambda for data science tasks.
 
 ## Requires
 * to generate the slides, use [`revelation`](https://pypi.org/project/revelation/)
+
+## Delivered at
+* [pydata cardiff](https://www.meetup.com/PyData-Cardiff-Meetup/)
+* [alacrity foundation](https://www.alacrityfoundation.co.uk/)

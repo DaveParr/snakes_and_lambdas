@@ -41,6 +41,18 @@ There can be multiple _concurrent_ machines too
 
 ---~
 
+## What is lambda?
+
+- Invocation payload (request and response)
+  - 6 MB (synchronous)
+  - 256 KB (asynchronous)
+- Deployment package size
+  - 50 MB (zipped, for direct upload)
+  - 250 MB (unzipped, including layers)
+  - 3 MB (console editor)
+
+---~
+
 ## Why is lambda?
 #### (for data science)
 
@@ -266,7 +278,7 @@ If you can't find an adult
 **SOLUTION**
 - use [`AWS SAM` cli](https://aws.amazon.com/blogs/compute/working-with-aws-lambda-and-lambda-layers-in-aws-sam/)
   - local development + testing with docker
-  - 'cloudy' deployment with cloudfront cli
+  - 'cloudy' deployment with cloudformation cli
 
 ---~
 
@@ -405,7 +417,7 @@ Bad case
 - whole scale
   - `across all`
 - immediate response
-  - can't afford a cold start
+  - can't afford a cold start: 'lambda your lambda'
 - 24:7 flat load
   - need 100% load 100% of the time
 

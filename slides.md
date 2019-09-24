@@ -336,9 +336,50 @@ alias playitagainsam='sam build && sam local invoke -e'
 - `sam package`
 - `sam deploy`
 
+---~
+
+## 3.4 local dev - cloud deploy
+
+```yaml
+Transform: 'AWS::Serverless-2016-10-31'
+Resources:
+  RegressionFunction:
+    # This resource creates a Lambda function.
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      # This function uses the python 3.7 runtime.
+      Runtime: python3.7
+      # This is the Lambda function's handler.
+      Handler: app.lambda_handler
+      # The location of the Lambda function code.
+      CodeUri: ./regression
+      # Event sources to attach to this function. In this case, we are attaching
+      # one API Gateway endpoint to the Lambda function. The function is
+      # called when a HTTP request is made to the API Gateway endpoint.
+      Events:
+        RegressionApi:
+            # Define an API Gateway endpoint that responds to HTTP GET at /regression
+            Type: Api
+            Properties:
+                Path: /regression
+                Method: GET
+```
+
+This enables CI/CD, which is a **Good Thing &trade;**
+
+---~
+
+## 3.4 local dev - cloud deploy
+
 ![ryker faint](https://media.giphy.com/media/tYelSVzQPtLdm/giphy.gif)
 
 Get help from an adult (dev-ops professional)
+
+but if you can't, [list 'em](https://docs.aws.amazon.com/cli/latest/reference/lambda/list-functions.html) and [flip 'em](https://github.com/awslabs/aws-cfn-template-flip)
+
+```bash
+aws lambda list-functions | cfn-flip
+```
 
 ---
 
@@ -390,6 +431,8 @@ Surple have 3 lambda data services
 - taking the time to set up SAM correctly has saved at least the time of browser console work alone
 - A Cloud Guru is built on lambda ([cheaply?](https://aws.amazon.com/lambda/pricing/))
   - And has some [great material on it](https://acloud.guru/learn/aws-lambda)
+- Deployment from [SageMaker is possible](https://aws.amazon.com/blogs/machine-learning/build-test-and-deploy-your-amazon-sagemaker-inference-models-to-aws-lambda/)
+- CI/CD from [GitLab is possible](https://medium.com/@tarekbecker/a-production-grade-ci-cd-pipeline-for-serverless-applications-888668bcfe04)
 
 ---~
 
